@@ -1,0 +1,33 @@
+film:
+    path:     /
+    defaults: { _controller: "FilmoBundle:Film:index" }
+
+film_show:
+    path:     /{id}/show
+    defaults: { _controller: "FilmoBundle:Film:show" }
+
+film_new:
+    path:     /new
+    defaults: { _controller: "FilmoBundle:Film:new" }
+
+film_create:
+    path:     /create
+    defaults: { _controller: "FilmoBundle:Film:create" }
+    methods:  POST
+
+film_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FilmoBundle:Film:edit" }
+
+film_update:
+    path:     /{id}/update
+    defaults: { _controller: "FilmoBundle:Film:update" }
+    methods:  [POST, PUT]
+
+film_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FilmoBundle:Film:delete" }
+    methods:  [POST, DELETE]
+film_recherche:
+    path:     /recherche
+    defaults: { _controller: "FilmoBundle:Film:recherche" }

@@ -1,0 +1,17 @@
+{% extends 'FilmoBundle::index.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+{% block body -%}
+	<div class="row">
+	    <h1>Film creation</h1>
+
+	    {{ form(form) }}
+
+		<ul class="record_actions">
+		    <li>
+		        <a href="{{ path('film') }}">
+		            Back to the list
+		        </a>
+		    </li>
+		</ul>
+	</div>
+{% endblock %}

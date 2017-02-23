@@ -1,0 +1,36 @@
+{% extends 'FilmoBundle::index.html.twig' %}
+
+{% block body -%}
+    <h1>Film list</h1>
+    <div class="row">
+            {% for entity in entities %}
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{ path('film_show', { 'id': entity.id }) }}">
+                                <img src="{{ asset('uploads/films/'~entity.path) }}" alt="" style="width:100%;height:400px">
+                            </a>
+                            <div class="caption">
+                                <h4 class="pull-right">{{ entity.categorie.nom }}</h4>
+                                <h4><a href="{{ path('film_show', { 'id': entity.id }) }}">{{ entity.titre }}</a>
+                                </h4>
+                                <p>{{ entity.description }}.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+        <a href="{{ path('film_new') }}">Add new Movies</a>
+        <div class="navigation">
+            {{ knp_pagination_render(entities) }}
+        </div>
+{% endblock %}

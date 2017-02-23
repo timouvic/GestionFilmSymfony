@@ -1,0 +1,43 @@
+{% extends 'FilmoBundle::index.html.twig' %}
+{% block body %}
+<form method="post">
+		<h1>{{ msg }}</h1>
+
+	<table width="60%" height="200">
+
+			<tr>
+				<td>{{ form_label(form.nom) }}</td>
+				<td>
+					{{ form_widget(form.nom) }}
+					{{ form_errors(form.nom) }}
+				</td>
+			</tr>
+			<tr>
+				<td>{{ form_label(form.prenom) }}</td>
+				<td>
+					{{ form_widget(form.prenom) }}
+					{{ form_errors(form.prenom) }}
+				</td>
+			</tr>
+			<tr>
+				<td>{{ form_label(form.datenaissance) }}</td>
+				<td>
+					{{ form_widget(form.datenaissance) }}
+					{{ form_errors(form.datenaissance) }}
+				</td>
+			</tr>
+			<tr>
+				<td>{{ form_label(form.sexe) }}</td>
+				<td>
+					{{ form_widget(form.sexe) }}
+					{{ form_errors(form.sexe) }}
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Ajouter un Acteur"></td>
+			</tr>
+	</table>
+	{{ form_rest(form) }}
+</form>
+<a href="{{ path('acteur') }}">Liste des Acteurs</a>
+{% endblock %}

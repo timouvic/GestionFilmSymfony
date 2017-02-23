@@ -1,0 +1,16 @@
+<h1 align="center">Liste des Categories</h1>
+
+<table width="40%">
+<tr bgcolor="yellow">
+	<th>Id</th>
+	<th>Nom</th>
+
+</tr>
+{% for c in categ %}
+	<tr>
+		<td>{{ c.id }}</td>
+		<td>{{ c.nom }}</td>
+	</tr>
+{% endfor %}
+
+</table>

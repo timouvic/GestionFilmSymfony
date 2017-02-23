@@ -1,0 +1,25 @@
+filmo_film:
+    resource: "@FilmoBundle/Resources/config/routing/film.yml"
+    prefix:   /film
+
+filmo_homepage:
+    path:     /
+    defaults: { _controller: FilmoBundle:Default:accueil }
+categorie_ajout:
+    path:     /categorie/ajout
+    defaults: { _controller: FilmoBundle:Categorie:ajout }
+categorie_affiche:
+    path:     /categorie
+    defaults: { _controller: FilmoBundle:Categorie:affiche }
+acteur_ajout:
+    path:     /acteur/ajout
+    defaults: { _controller: FilmoBundle:Acteur:ajout }
+acteur:
+    path:     /acteur
+    defaults: { _controller: FilmoBundle:Acteur:affiche }
+acteur_modif:
+    path:     /acteur/modif/{id}
+    defaults: { _controller: FilmoBundle:Acteur:modifier }
+acteur_supp:
+    path:     /acteur/supp/{id}
+    defaults: { _controller: FilmoBundle:Acteur:supprimer }

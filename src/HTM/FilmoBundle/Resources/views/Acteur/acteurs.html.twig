@@ -1,0 +1,38 @@
+{% extends 'FilmoBundle::index.html.twig' %}
+{% block body %}
+<h1>Liste des Acteurs</h1>
+<table width="100%">
+	<thead>
+		<tr align="left">
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Date de Naissance</th>
+			<th>Sexe</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	</tbody>	
+		{% for acteur in acteurs %}
+			<tr>
+				<td>{{ acteur.nom }}</td>
+				<td>{{ acteur.prenom }}</td>
+				<td>{{ acteur.datenaissance|date("d/M/Y") }}</td>
+				<td>
+					{% if acteur.sexe=="H" %}
+						Homme
+					{% else %}
+						Femme
+					{% endif %}
+				</td>
+				<td>
+					<ul>
+						<li><a href="{{ path('acteur_modif', { 'id': acteur.id }) }}"><img src="{{ asset('bundles/filmo/images/edit.png') }}" width="25" height="25" /></a></li>
+						<li><a href="{{ path('acteur_supp', { 'id': acteur.id }) }}"><img src="{{ asset('bundles/filmo/images/delete.png') }}" width="25" height="25" /></a></li>
+					</ul>
+				</td>
+			</tr>
+	{% endfor %}
+	<tbody>
+</table>
+	<a href="{{ path('acteur_ajout') }}">Ajouter un Nouveau Acteur</a>
+{% endblock %}
